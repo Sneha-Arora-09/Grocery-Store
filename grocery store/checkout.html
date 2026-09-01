@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/check.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="top-left" id="locationBtn">
+      📍 Deliver to: <span>Enter Location</span>
+    </div>
+
+    <div class="top-right">
+      📞 Call:+91 62053 38603
+    </div>
+  </div>
+
+  <div class="popup" id="locationPopup">
+    <div class="popup-content">
+
+      <!-- CLOSE -->
+      <span class="close" id="closePopup">✖</span>
+
+      <h2>Specify Your Location</h2>
+
+      <!-- DELIVERY / PICKUP -->
+      <div class="tabs">
+        <label><input type="radio" name="type" checked> Delivery</label>
+        <label><input type="radio" name="type"> Pickup</label>
+      </div>
+      <p>Where do you want us to deliver?</p>
+      <!-- INPUT AREA -->
+      <div class="location-input">
+        <button class="current-btn" id="currentLocationBtn">📍 Use Current Location</button>
+        <input type="text" id="locationInput" placeholder="Search locality or street name">
+        <button class="confirm-btn" id="confirmBtn">Confirm</button>
+      </div>
+
+      <!-- MESSAGE -->
+      <p id="locationMessage"></p>
+
+      <!-- SKIP -->
+      <button class="skip-btn">Skip For Now</button>
+
+      <!-- ❌ NOT SERVING BOX -->
+      <div id="notServingBox" class="not-serving">
+        <p class="note">
+          Note: Product availability, prices, and delivery options will vary based on the delivery location!
+        </p>
+
+        <h3>Sorry, we're not serving in your location</h3>
+
+        <button class="proceed-btn">Proceed to shopping</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+
+  <div class="container">
+
+    <h1>Checkout</h1>
+
+    <div class="checkout-grid">
+
+      <!-- LEFT: ORDER SUMMARY -->
+      <div class="card glass">
+        <h3>Order Summary</h3>
+        <div id="orderItems"></div>
+      </div>
+
+      <!-- RIGHT: ADDRESS -->
+      <div class="card glass">
+
+        <h3>Delivery Address</h3>
+
+        <div id="savedAddress" class="address-box">
+          No address added
+        </div>
+
+        <button class="btn-outline" onclick="openPopup()">+ Add Address</button>
+
+        <h2>Total: ₹<span id="total">0</span></h2>
+
+        <button class="btn-primary" onclick="placeOrder()">Place Order</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup" class="popup">
+
+    <div class="popup-content glass">
+
+      <span class="close" onclick="closePopup()">✖</span>
+
+      <h3>Add Address</h3>
+      <input id="name" placeholder="Full Name">
+      <input id="phone" placeholder="Phone Number">
+
+      <!-- ✅ ADD OTP HERE -->
+      <button onclick="sendOTP()" class="btn-outline">Send OTP</button>
+
+      <div id="otpBox" style="display:none;">
+        <input id="otpInput" placeholder="Enter OTP">
+        <button onclick="verifyOTP()" class="btn-primary">Verify OTP</button>
+      </div>
+
+      <input id="address" placeholder="Full Address">
+      <input id="city" placeholder="City">
+      <input id="pincode" placeholder="Pincode">
+
+      <button class="btn-primary" onclick="saveAddress()">Save Address</button>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- LEFT -->
+      <div class="footer-left">
+        <h2>Shivam<span>Mart</span></h2>
+
+        <p>
+          Police line road jamui bihar<br>
+          bihar - 600044
+        </p>
+
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Refund Policy</a> |
+          <a href="#">Shipping Policy</a> |
+          <a href="#">Terms and Condition</a>
+        </div>
+
+        <p class="copyright">
+          Copyright © 2026 Shivam Mart. All Rights Reserved
+        </p>
+      </div>
+
+      <!-- CENTER -->
+      <div class="footer-center">
+        <h3>Need Help</h3>
+
+        <p class="phone">📞 +91 62053 38603</p>
+
+        <h3 class="mt">Categories</h3>
+
+        <div class="categories">
+          <a href="#">Staples</a> |
+          <a href="#">Snacks</a> |
+          <a href="#">Beverages</a> |
+          <a href="#">Dairy</a> |
+          <a href="#">Ready To Cook</a> |
+          <a href="#">Baby Care</a> |
+          <a href="#">Household</a> |
+          <a href="#">Cleaning</a> |
+          <a href="#">Health Care</a> |
+          <a href="#">Personal Care</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="footer-right">
+        <h3>Links</h3>
+        <a href="index.html">Home</a>
+        <a href="#">New Arrivals</a>
+      </div>
+  </footer>
+
+  <script src="js/check.js"></script>
+  <script src="js/script.js"></script>
+  <a href="https://wa.me/916205338603?text=Hello%20I%20want%20to%20place%20an%20order" class="whatsapp-btn"
+    target="_blank">
+
+    <span>Click to chat</span>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="whatsapp">
+
+</body>
+
+</html>
